@@ -108,6 +108,9 @@ namespace SafeCenter
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
+            // Utworzenie nowego obiektu SolidColorBrush o kolorze #4caf50
+            SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff5050"));
+
             //ścieżka folderu dokumenty
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -125,14 +128,17 @@ namespace SafeCenter
 
             if (password.Text == "" && login.Text == "")
             {
+                result.Foreground = brush;
                 result.Text = "Nie podano żadnych informacji!";
             }
             else if (password.Text == "")
             {
+                result.Foreground = brush;
                 result.Text = "Nie podano hasła!";
             }
             else if (login.Text == "")
             {
+                result.Foreground = brush;
                 result.Text = "Nie podano loginu!";
             }
             else

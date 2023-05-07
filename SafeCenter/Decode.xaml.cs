@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.XPath;
 
 namespace SafeCenter
 {
@@ -100,7 +101,7 @@ namespace SafeCenter
             return true;
         }
 
-        string messageDecrypted = "";
+        
 
         private void decodeBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -115,35 +116,31 @@ namespace SafeCenter
 
             if (count == "" && text == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Text = "Nie wpisano żadnej informacji!";
                 result.Foreground = brush;
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else if (count == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Text = "Nie wpisano, o ile mają być przesunięte litery!";
                 result.Foreground = brush;
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else if (text == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Text = "Nie wpisano wiadomości!";
                 result.Foreground = brush;
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else
             {
-                this.Height = 540;
+                this.Height = 550;
                 string toDecode = CaesarDecode(text, letters, Convert.ToInt32(count));
-                result.Visibility = Visibility.Collapsed;
-                copyMessage.Visibility = Visibility.Visible;
-                messageDecrypted = toDecode;
+                result.Text = "";
+                Encrypted.Text = toDecode;
             }
         }
 
@@ -157,7 +154,7 @@ namespace SafeCenter
 
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(messageDecrypted);
+            Clipboard.SetText(Encrypted.Text);
         }
 
 
@@ -223,21 +220,13 @@ namespace SafeCenter
 
         private void Count_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 460;
-            }
+            Encrypted.Text = "";
         }
 
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 460;
-            }
+            Encrypted.Text = "";
         }
     }
 }

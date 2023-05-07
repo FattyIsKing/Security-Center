@@ -41,7 +41,7 @@ MaterialDesignOutlinedTextBox}" GotFocus="login_GotFocus" LostFocus="login_LostF
                 <TextBox Margin="0,30,0,0" x:Name="password" Width="300" FontSize="18"
 materialDesign:HintAssist.Hint ="Hasło"
 BorderBrush="#FFC0BBBB" Style="{StaticResource
-MaterialDesignOutlinedTextBox}" GotFocus="password_GotFocus" LostFocus="password_LostFocus"/>
+MaterialDesignOutlinedTextBox}" GotFocus="password_GotFocus" LostFocus="password_LostFocus" materialDesign:PasswordBoxAssist.IsPasswordRevealed="False"/>
                 <Button x:Name="register" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
 Height="53" Width ="300" materialDesign:ButtonAssist.CornerRadius ="10"
 FontSize="18" Content="ZATWIERDŹ" Click="register_Click" Margin="0,20,0,0"/>

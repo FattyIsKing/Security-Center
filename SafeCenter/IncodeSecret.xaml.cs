@@ -63,13 +63,13 @@ namespace SafeCenter
         static string KeyGenerator(int length)
         {
 
-            // Lista znaków, z których ma być generowane hasło
+            // Lista znaków, z których ma być generowany klucz
             string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789|@#%$&*^?.";
 
             // Generator liczb pseudolosowych
             Random random = new Random();
 
-            // Generowanie hasła
+            // Generowanie klucza
             string key = new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
 
@@ -110,54 +110,49 @@ namespace SafeCenter
         }
 
 
-        string messageEncrypted = "";
+
+        
+
 
 
         private void incodeBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            // Utworzenie nowego obiektu SolidColorBrush o kolorze #4caf50
+            
             SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff5050"));
 
             string text = Message.Text;
             string publickey = Publickey.Text;
             string privatekey = Privatekey.Text;
 
+
             if (text == "")
             {
-                this.Height = 750;
-                copyMessage.Visibility = Visibility.Collapsed;
+                this.Height = 830;
                 result.Foreground = brush;
                 result.Text = "Nie wpisano wiadomości!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
             }
+
             else if(publickey.Length != 8 || privatekey.Length != 8)
             {
-                this.Height = 750;
-                copyMessage.Visibility = Visibility.Collapsed;
+                this.Height = 830;
                 result.Foreground = brush;
                 result.Text = "Klucze nie mają 8 znaków!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
             }
+
             else if(publickey.Length != 8 && text == "" && privatekey.Length != 8)
             {
-                this.Height = 750;
-                copyMessage.Visibility = Visibility.Collapsed;
+                this.Height = 830;
                 result.Foreground = brush;
                 result.Text = "Nie podano wszystkich informacji!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
             }
+
             else
             {
-                result.Foreground = new SolidColorBrush(Colors.White);
                 string encrypted = Encrypt(publickey, privatekey, text);
-                copyMessage.Visibility = Visibility.Visible;
-                result.Visibility = Visibility.Collapsed;
-                messageEncrypted = encrypted;
-                this.Height = 750;
+                Encrypted.Text = encrypted;
+                this.Height = 790;
+                result.Text = "";
             }
         }
 
@@ -194,7 +189,7 @@ namespace SafeCenter
 
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(messageEncrypted);
+            Clipboard.SetText(Encrypted.Text);
         }
 
 
@@ -255,29 +250,17 @@ namespace SafeCenter
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 680;
-            }
+            Encrypted.Text = "";
         }
 
         private void Publickey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 680;
-            }
+            Encrypted.Text = "";
         }
 
         private void Privatekey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 680;
-            }
+            Encrypted.Text = "";
         }
     }
 }

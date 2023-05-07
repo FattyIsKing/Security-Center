@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:SafeCenter"
         mc:Ignorable="d"
-        Title="MessageIncoder" Height="460" Width="550"
+        Title="MessageIncoder" Height="550" Width="550"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"
@@ -30,18 +30,28 @@ FontWeight="Bold" FontFamily="Century Gothic" Width="360">Szyfrowanie wiadomośc
 
 
 
-                <TextBox Margin="0,30,0,0" x:Name="Message" Width="300" FontSize="18"
+                <TextBox Margin="0,30,0,0" x:Name="Message" Width="375" FontSize="18"
 materialDesign:HintAssist.Hint ="Wiadomość"
 BorderBrush="#FFC0BBBB" Style="{StaticResource
 MaterialDesignOutlinedTextBox}" GotFocus="Message_GotFocus" LostFocus="Message_LostFocus" TextChanged="Message_TextChanged"/>
 
 
+                <WrapPanel Orientation="Horizontal" Height="60" Margin="0,25,0,0" HorizontalAlignment="Center" Width="375">
+
+                    <TextBox x:Name="Encrypted" Width="235" FontSize="18"
+materialDesign:HintAssist.Hint ="Zaszyfrowana wiadomość"
+BorderBrush="#FFC0BBBB" Style="{StaticResource
+MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" IsEnabled="False"/>
+
+                    <Button x:Name="Copy3" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
+                    Height="53" Width ="110" materialDesign:ButtonAssist.CornerRadius ="10"
+                    FontSize="18" Content="KOPIUJ" Click="copyMessage_Click" BorderBrush="{x:Null}" Foreground="Black" Margin="30,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </WrapPanel>
 
 
 
 
-
-                <TextBox Margin="0,25,0,0" x:Name="Count" Width="300" FontSize="18"
+                <TextBox Margin="0,25,0,0" x:Name="Count" Width="375" FontSize="18"
 materialDesign:HintAssist.Hint ="O ile mają się przesuwac litery?"
 BorderBrush="#FFC0BBBB" Style="{StaticResource
 MaterialDesignOutlinedTextBox}" MaxLength="4" GotFocus="Count_GotFocus" LostFocus="Count_LostFocus" PreviewTextInput="Count_PreviewTextInput" TextChanged="Count_TextChanged"/>
@@ -51,17 +61,14 @@ MaterialDesignOutlinedTextBox}" MaxLength="4" GotFocus="Count_GotFocus" LostFocu
 
                 <Button Margin="0,20,0,0" x:Name="incodeBtn" Style="{StaticResource
 MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="300" materialDesign:ButtonAssist.CornerRadius ="10"
+Height="53" Width ="375" materialDesign:ButtonAssist.CornerRadius ="10"
 FontSize="18" Content="SZYFRUJ WIADOMOŚĆ" Click="incodeBtn_Click" Foreground="Black"/>
 
 
 
 
 
-                <Button Margin="0,20,0,0" x:Name="copyMessage" Style="{StaticResource
-MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="300" materialDesign:ButtonAssist.CornerRadius ="10"
-FontSize="18" Content="KOPIUJ WIADOMOŚĆ" Click="copyMessage_Click" Foreground="Black" Visibility="Collapsed"/>
+
                 <TextBlock TextWrapping="Wrap" Height="130" x:Name="result" Width="466" FontSize="23" TextAlignment="Center" Cursor="Hand" Margin="0,15,0,0" />
 
             </StackPanel>

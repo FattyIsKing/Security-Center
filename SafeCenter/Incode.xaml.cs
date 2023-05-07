@@ -120,7 +120,7 @@ namespace SafeCenter
         }
 
 
-        string messageEncrypted = "";
+        
         private void incodeBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -135,37 +135,33 @@ namespace SafeCenter
 
             if (count == "" && text == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Foreground = brush;
                 result.Text = "Nie wpisano żadnej informacji!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else if (count == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Foreground = brush;
                 result.Text = "Nie wpisano, o ile mają być przesunięte litery!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else if (text == "")
             {
-                this.Height = 540;
+                this.Height = 590;
                 result.Foreground = brush;
                 result.Text = "Nie wpisano wiadomości!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else
             {
 
                 
                 string toIncode = CaesarEncode(text, letters, Convert.ToInt32(count));
-                this.Height = 540;
-                messageEncrypted = toIncode;
-                copyMessage.Visibility = Visibility.Visible;
-                result.Visibility = Visibility.Collapsed;
+                this.Height = 550;
+                Encrypted.Text = toIncode;
+                result.Text = "";
             }
         }
 
@@ -177,6 +173,7 @@ namespace SafeCenter
             mainForm.Show(); // Otwieramy główne okno
         }
 
+
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -187,9 +184,10 @@ namespace SafeCenter
         }
 
 
+
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(messageEncrypted);
+            Clipboard.SetText(Encrypted.Text);
         }
 
 
@@ -230,22 +228,15 @@ namespace SafeCenter
             Count.BorderBrush = brush;
         }
 
+
         private void Count_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 460;
-            }
+            Encrypted.Text = "";
         }
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 460;
-            }
+            Encrypted.Text = "";
         }
     }
 }

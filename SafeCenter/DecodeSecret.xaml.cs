@@ -103,8 +103,6 @@ namespace SafeCenter
         }
 
 
-        string messageEncrypted = "";
-
         private void decodeBtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -119,27 +117,24 @@ namespace SafeCenter
 
             if (text == "")
             {
-                this.Height = 570;
+                this.Height = 680;
                 result.Foreground = brush;
                 result.Text = "Nie wpisano wiadomości!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else if (publickey.Length != 8 || privatekey.Length != 8)
             {
-                this.Height = 570;
+                this.Height = 680;
                 result.Foreground = brush;
                 result.Text = "Klucze nie mają 8 znaków!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+
             }
             else if (publickey.Length != 8 && text == "" && privatekey.Length != 8)
             {
-                this.Height = 570;
+                this.Height = 680;
                 result.Foreground = brush;
                 result.Text = "Nie podano wszystkich informacji!";
-                copyMessage.Visibility = Visibility.Collapsed;
-                result.Visibility = Visibility.Visible;
+                
             }
             else
             {
@@ -149,29 +144,25 @@ namespace SafeCenter
 
                 if (decrypted == "Padding is invalid and cannot be removed.")
                 {
-                    this.Height = 570;
+                    this.Height = 680;
                     result.Foreground = brush;
                     decrypted = "Wprowadzono zły klucz publiczny!";
                     result.Text = decrypted;
-                    copyMessage.Visibility = Visibility.Collapsed;
-                    result.Visibility = Visibility.Visible;
+                    
                 }
                 else if(decrypted == "The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters." || decrypted == "The input data is not a complete block.")
                 {
-                    this.Height = 580;
+                    this.Height = 690;
                     result.Foreground = brush;
                     decrypted = "Wiadomość nie jest w odpowiednim formacie!";
                     result.Text = decrypted;
-                    copyMessage.Visibility = Visibility.Collapsed;
-                    result.Visibility = Visibility.Visible;
                 }
                 else
                 {
                     result.Foreground = new SolidColorBrush(Colors.White);
-                    copyMessage.Visibility = Visibility.Visible;
-                    result.Visibility = Visibility.Collapsed;
-                    messageEncrypted = decrypted;
-                    this.Height = 610;
+                    result.Text = "";
+                    Encrypted.Text = decrypted;
+                    this.Height = 640;
                 }
 
                 
@@ -181,7 +172,7 @@ namespace SafeCenter
 
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(messageEncrypted);
+            Clipboard.SetText(Encrypted.Text);
         }
 
 
@@ -267,31 +258,19 @@ namespace SafeCenter
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 530;
-            }
+            Encrypted.Text = "";
         }
 
 
         private void Publickey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 530;
-            }
+            Encrypted.Text = "";
         }
 
 
         private void Privatekey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (copyMessage.Visibility == Visibility.Visible)
-            {
-                copyMessage.Visibility = Visibility.Collapsed;
-                this.Height = 530;
-            }
+            Encrypted.Text = "";
         }
     }
 }

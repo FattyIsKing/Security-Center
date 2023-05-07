@@ -28,6 +28,9 @@ namespace SafeCenter
 
         public void Checker(string password) 
         {
+            // Utworzenie nowego obiektu SolidColorBrush o kolorze #4caf50
+            SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff5050"));
+
             int passwordLength = password.Length;
             int upperCaseCount = 0;
             int specialCharCount = 0;
@@ -36,7 +39,7 @@ namespace SafeCenter
             // Sprawdź długość hasła
             if (passwordLength < 8)
             {
-                result.Foreground = new SolidColorBrush(Colors.Red);
+                result.Foreground = brush;
                 result.Text = "Słabe hasło";
             }
             else if (passwordLength < 10)
@@ -65,7 +68,7 @@ namespace SafeCenter
                 }
                 else
                 {
-                    result.Foreground = new SolidColorBrush(Colors.Red);
+                    result.Foreground = brush;
                     result.Text = "Słabe hasło";
                 }
             }
