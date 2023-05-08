@@ -36,13 +36,25 @@ namespace SafeCenter
             int specialCharCount = 0;
             int digitCount = 0;
 
+            // Lista słów łatwych do odgadnięcia
+            string[] weakWords = { "password", "123456", "qwerty", "admin", "letmein", "monkey", "sunshine", "iloveyou", "welcome", "football", "abc123", "dragon", "master", "trustno1", "jesus", "ninja", "monkey", "123456789", "123123", "654321", "hello", "charlie", "baseball", "mustang", "shadow", "michael", "superman", "batman", "starwars", "pokemon", "coffee", "hockey", "summer", "winter", "autumn", "spring", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december", "birthday", "password1", "password123" };
+
+            // Sprawdź, czy hasło zawiera jakieś słowo łatwe do odgadnięcia
+            foreach (string word in weakWords)
+            {
+                if (password.ToLower().Contains(word))
+                {
+                    result.Foreground = brush;
+                    result.Text = "Słabe hasło";
+                }
+            }
             // Sprawdź długość hasła
-            if (passwordLength < 8)
+            if (passwordLength <= 6)
             {
                 result.Foreground = brush;
                 result.Text = "Słabe hasło";
             }
-            else if (passwordLength < 10)
+            else if (passwordLength <= 8)
             {
                 // Sprawdź, czy hasło zawiera co najmniej jedną dużą literę, jeden znak specjalny i dwie cyfry
                 foreach (char c in password)
@@ -61,7 +73,7 @@ namespace SafeCenter
                     }
                 }
 
-                if (upperCaseCount >= 1 && specialCharCount >= 1 && digitCount >= 1)
+                if (upperCaseCount >= 1 && specialCharCount >= 1 && digitCount >= 2)
                 {
                     result.Foreground = new SolidColorBrush(Colors.Orange);
                     result.Text = "Średnie hasło";
@@ -91,7 +103,7 @@ namespace SafeCenter
                     }
                 }
 
-                if (upperCaseCount >= 3 && specialCharCount >= 3 && digitCount >= 3)
+                if (upperCaseCount >= 3 && specialCharCount >= 3 && digitCount >= 4)
                 {
                     result.Foreground = new SolidColorBrush(Colors.Green);
                     result.Text = "Silne hasło";

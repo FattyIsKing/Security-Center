@@ -106,6 +106,9 @@ namespace SafeCenter
 
 
 
+
+        
+
         private void login_Click(object sender, RoutedEventArgs e)
         {
             // Utworzenie nowego obiektu SolidColorBrush o kolorze #4caf50
@@ -189,6 +192,7 @@ namespace SafeCenter
                     this.Hide(); // Ukrywamy bieżące okno
                     SecretWindow mainForm = new SecretWindow(); // Tworzymy obiekt klasy MainWindow (główne okno)
                     mainForm.Show(); // Otwieramy główne okno
+
                 }
                 else
                 {
@@ -198,5 +202,11 @@ namespace SafeCenter
 
             }
         }
+
+        
+
+        
+
+
     }
 }

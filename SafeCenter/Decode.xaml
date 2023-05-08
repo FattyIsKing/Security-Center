@@ -38,7 +38,7 @@ MaterialDesignOutlinedTextBox}" GotFocus="Message_GotFocus" LostFocus="Message_L
 
                 <WrapPanel Orientation="Horizontal" Height="60" Margin="0,25,0,0" HorizontalAlignment="Center" Width="375">
 
-                    <TextBox x:Name="Encrypted" Width="235" FontSize="18"
+                    <TextBox x:Name="Decrypted" Width="235" FontSize="18"
 materialDesign:HintAssist.Hint ="Odszyfrowana wiadomość"
 BorderBrush="#FFC0BBBB" Style="{StaticResource
 MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" IsEnabled="False"/>

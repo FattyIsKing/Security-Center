@@ -161,7 +161,7 @@ namespace SafeCenter
                 {
                     result.Foreground = new SolidColorBrush(Colors.White);
                     result.Text = "";
-                    Encrypted.Text = decrypted;
+                    Decrypted.Text = decrypted;
                     this.Height = 640;
                 }
 
@@ -172,15 +172,8 @@ namespace SafeCenter
 
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(Encrypted.Text);
+            Clipboard.SetText(Decrypted.Text);
         }
-
-
-        private void result_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Clipboard.SetText(result.Text);
-        }
-
 
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -258,19 +251,19 @@ namespace SafeCenter
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Encrypted.Text = "";
+            Decrypted.Text = "";
         }
 
 
         private void Publickey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Encrypted.Text = "";
+            Decrypted.Text = "";
         }
 
 
         private void Privatekey_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Encrypted.Text = "";
+            Decrypted.Text = "";
         }
     }
 }

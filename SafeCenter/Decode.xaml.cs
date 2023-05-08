@@ -140,7 +140,7 @@ namespace SafeCenter
                 this.Height = 550;
                 string toDecode = CaesarDecode(text, letters, Convert.ToInt32(count));
                 result.Text = "";
-                Encrypted.Text = toDecode;
+                Decrypted.Text = toDecode;
             }
         }
 
@@ -148,13 +148,13 @@ namespace SafeCenter
 
         private void exitApp(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
 
 
         private void copyMessage_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(Encrypted.Text);
+            Clipboard.SetText(Decrypted.Text);
         }
 
 
@@ -220,13 +220,13 @@ namespace SafeCenter
 
         private void Count_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Encrypted.Text = "";
+            Decrypted.Text = "";
         }
 
 
         private void Message_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Encrypted.Text = "";
+            Decrypted.Text = "";
         }
     }
 }
