@@ -56,7 +56,7 @@ MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" IsEnabled="False"/>
                 <TextBox Margin="0,25,0,0" x:Name="Count" Width="375" FontSize="18"
 materialDesign:HintAssist.Hint ="O ile mają się przesuwac litery?"
 BorderBrush="#FFC0BBBB" Style="{StaticResource
-MaterialDesignOutlinedTextBox}" MaxLength="3" GotFocus="Count_GotFocus" LostFocus="Count_LostFocus" PreviewTextInput="Count_PreviewTextInput" Cursor="Hand" TextChanged="Count_TextChanged"/>
+MaterialDesignOutlinedTextBox}" MaxLength="3" GotFocus="Count_GotFocus" LostFocus="Count_LostFocus" PreviewTextInput="Count_PreviewTextInput" TextChanged="Count_TextChanged"/>
 
 
 

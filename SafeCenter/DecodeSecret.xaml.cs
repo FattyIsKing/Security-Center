@@ -146,7 +146,7 @@ namespace SafeCenter
                 {
                     this.Height = 680;
                     result.Foreground = brush;
-                    decrypted = "Wprowadzono zły klucz publiczny!";
+                    decrypted = "Wprowadzono złe klucze deszyfrujące!";
                     result.Text = decrypted;
                     
                 }
