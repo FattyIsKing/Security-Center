@@ -10,19 +10,16 @@
     <Compile Update="Decode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DecodeSecret.xaml.cs">
+    <Compile Update="DecodeUltra.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Incode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="IncodeSecret.xaml.cs">
+    <Compile Update="IncodeUltra.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Information.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PasswordChecker.xaml.cs">
@@ -31,30 +28,21 @@
     <Compile Update="RandomPassword.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Registration.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="SecretWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Decode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DecodeSecret.xaml">
+    <Page Update="DecodeUltra.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Incode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="IncodeSecret.xaml">
+    <Page Update="IncodeUltra.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Information.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Login.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -64,12 +52,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RandomPassword.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Registration.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="SecretWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

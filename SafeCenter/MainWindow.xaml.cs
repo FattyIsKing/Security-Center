@@ -26,9 +26,9 @@ namespace SafeCenter
         private Incode window1;
         private Decode window2;
         private RandomPassword window3;
-        private Login window4;
         private PasswordChecker window5;
-
+        private IncodeUltra window6;
+        private DecodeUltra window7;
 
         public MainWindow()
         {
@@ -36,8 +36,9 @@ namespace SafeCenter
             window1 = new Incode();
             window2 = new Decode();
             window3 = new RandomPassword();
-            window4 = new Login();
             window5 = new PasswordChecker();
+            window6 = new IncodeUltra();
+            window7 = new DecodeUltra();
         }
 
 
@@ -89,19 +90,28 @@ namespace SafeCenter
 
 
 
-        private void secretCode(object sender, RoutedEventArgs e)
-        {
-            window4.Show();
-            this.Hide();
-        }
-
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var greenPrimaryDictionary = new ResourceDictionary();
             greenPrimaryDictionary.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Green.xaml");
 
             Application.Current.Resources.MergedDictionaries.Add(greenPrimaryDictionary);
+        }
+
+
+
+        private void incodeUltraBtn_Click(object sender, RoutedEventArgs e)
+        {
+            window6.Show();
+            this.Hide();
+        }
+
+
+
+        private void decodeUltraBtn_Click(object sender, RoutedEventArgs e)
+        {
+            window7.Show();
+            this.Hide();
         }
     }
 }

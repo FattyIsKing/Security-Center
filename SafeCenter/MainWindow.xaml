@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="SafeCenter" Height="560" Width="490"
+        Title="SafeCenter" Height="682" Width="490"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"
@@ -21,34 +21,44 @@
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" x:Name="popup" Foreground="White">
                     <StackPanel Margin="10 10 10 10" Orientation="Horizontal" HorizontalAlignment="Center" >
                        
-                        <Button x:Name ="secretBtn" ToolTip="Safe Center Premium" Content="Safe Center Premium" Click="secretCode"/>
+                        <Button x:Name ="project" ToolTip="GitHub" Content="GitHub"/>
                         <Button x:Name ="btn_exit" ToolTip="Zamknij aplikację" Content="Wyjście" Click="exitApp"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <TextBlock x:Name="title" Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="45"
-FontWeight="Bold"><Run Text="S"/><Run Text="afe"/><Run Text=" Center"/><Run Language="pl-pl" Text=" Lite"/></TextBlock>
+FontWeight="Bold"><Run Text="S"/><Run Text="afe"/><Run Text=" Center"/></TextBlock>
 
 
                 <Button Margin="0,40,0,0" x:Name="incodeBtn" Style="{StaticResource
 MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="310
-" materialDesign:ButtonAssist.CornerRadius ="10"
-FontSize="18" Content="SZYFROWANIE WIADOMOŚCI" Click="incodeBtn_Click"/>
+Height="53" Width ="370" materialDesign:ButtonAssist.CornerRadius ="10"
+FontSize="18" Content="SZYFROWANIE WIADOMOŚCI (LITE)" Click="incodeBtn_Click"/>
 
                 <Button Margin="0 20 0 0" x:Name="decodeBtn" Style="{StaticResource
 MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="310" materialDesign:ButtonAssist.CornerRadius ="10"
-FontSize="18" Content="ODSZYFROWANIE WIADOMOŚCI" Click="decodeBtn_Click"/>
+Height="53" Width ="371" materialDesign:ButtonAssist.CornerRadius ="10"
+FontSize="18" Content="DESZYFROWANIE WIADOMOŚCI (LITE)" Click="decodeBtn_Click"/>
 
                 <Button Margin="0 20 0 0" x:Name="passBtn" Style="{StaticResource
 MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="310" materialDesign:ButtonAssist.CornerRadius ="10"
+Height="53" Width ="370" materialDesign:ButtonAssist.CornerRadius ="10"
 FontSize="18" Content="GENERATOR HASEŁ" Click="passBtn_Click"/>
 
-                <Button Margin="0,20,0,15" x:Name="passcheckBtn" Style="{StaticResource
+                <Button Margin="0,20,0,0" x:Name="passcheckBtn" Style="{StaticResource
 MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
-Height="53" Width ="310" materialDesign:ButtonAssist.CornerRadius ="10"
+Height="53" Width ="370" materialDesign:ButtonAssist.CornerRadius ="10"
 FontSize="18" Content="SPRAWDZENIE SIŁY HASŁA" Click="passcheckBtn_Click"/>
+
+                <Button Margin="0,20,0,0" x:Name="incodeUltraBtn" Style="{StaticResource
+MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
+Height="53" Width ="370" materialDesign:ButtonAssist.CornerRadius ="10"
+FontSize="18" Content="SZYFROWANIE WIADOMOŚCI (ULTRA)" Click="incodeUltraBtn_Click"/>
+
+
+                <Button Margin="0,20,0,15" x:Name="decodeUltraBtn" Style="{StaticResource
+MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth ="Depth0" 
+Height="53" Width ="369" materialDesign:ButtonAssist.CornerRadius ="10"
+FontSize="18" Content="DESZYFROWANIE WIADOMOŚCI (ULTRA)" Click="decodeUltraBtn_Click"/>
 
             </StackPanel>
         </materialDesign:DialogHost>
