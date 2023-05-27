@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
 using System.Windows.Media.Animation;
+using System.Diagnostics;
 
 namespace SafeCenter
 {
@@ -42,6 +43,21 @@ namespace SafeCenter
         }
 
 
+        private void OpenWebsite()
+        {
+            string url = "https://github.com/GrubyIsKing/Security-Center"; // Adres URL strony, na którą chcesz przekierować użytkownika
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+
+        private void projectGithub(object sender, RoutedEventArgs e)
+        {
+            OpenWebsite();
+        }
 
         private void exitApp(object sender, RoutedEventArgs e)
         {

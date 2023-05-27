@@ -160,7 +160,7 @@ namespace SafeCenter {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SafeCenter;V1.0.0.0;component/incodeultra.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SafeCenter;component/incodeultra.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\IncodeUltra.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

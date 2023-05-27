@@ -49,12 +49,12 @@ namespace SafeCenter
                 }
             }
             // Sprawdź długość hasła
-            if (passwordLength <= 6)
+            if (passwordLength <= 12)
             {
                 result.Foreground = brush;
                 result.Text = "Słabe hasło";
             }
-            else if (passwordLength <= 8)
+            else if (passwordLength <= 18)
             {
                 // Sprawdź, czy hasło zawiera co najmniej jedną dużą literę, jeden znak specjalny i dwie cyfry
                 foreach (char c in password)
@@ -73,7 +73,7 @@ namespace SafeCenter
                     }
                 }
 
-                if (upperCaseCount >= 1 && specialCharCount >= 1 && digitCount >= 2)
+                if (upperCaseCount >= 1 && specialCharCount >= 1 && digitCount >= 1)
                 {
                     result.Foreground = new SolidColorBrush(Colors.Orange);
                     result.Text = "Średnie hasło";
@@ -103,7 +103,7 @@ namespace SafeCenter
                     }
                 }
 
-                if (upperCaseCount >= 3 && specialCharCount >= 3 && digitCount >= 4)
+                if (upperCaseCount >= 2 && specialCharCount >= 2 && digitCount >= 2)
                 {
                     result.Foreground = new SolidColorBrush(Colors.Green);
                     result.Text = "Silne hasło";

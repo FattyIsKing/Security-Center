@@ -51,12 +51,6 @@ namespace SafeCenter
                 chars += specialChars;
             }
 
-            if (chars.Length == 0)
-            {
-                // Jeśli żadna opcja nie jest zaznaczona, zwróć pusty ciąg znaków
-                return "";
-            }
-
             // Generator liczb pseudolosowych
             Random random = new Random();
 

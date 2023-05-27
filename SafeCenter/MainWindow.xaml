@@ -20,8 +20,8 @@
 
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" x:Name="popup" Foreground="White">
                     <StackPanel Margin="10 10 10 10" Orientation="Horizontal" HorizontalAlignment="Center" >
-                       
-                        <Button x:Name ="project" ToolTip="GitHub" Content="GitHub"/>
+
+                        <Button x:Name ="project" ToolTip="GitHub" Content="GitHub" Click="projectGithub"/>
                         <Button x:Name ="btn_exit" ToolTip="Zamknij aplikację" Content="Wyjście" Click="exitApp"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
