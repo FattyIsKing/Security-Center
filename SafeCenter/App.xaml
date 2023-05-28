@@ -8,6 +8,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Window">
+                <Setter Property="Icon" Value="ikona.png"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
