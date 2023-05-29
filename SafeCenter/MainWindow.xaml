@@ -10,8 +10,9 @@
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
-
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded"
+        Icon="References/ikona.ico">
+       
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25" materialDesign:ShadowAssist.ShadowDepth="Depth4">
 
 
@@ -26,7 +27,7 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <TextBlock x:Name="title" Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="45"
-FontWeight="Bold"><Run Text="S"/><Run Text="afe"/><Run Text=" Center"/></TextBlock>
+FontWeight="Bold">Safe Center</TextBlock>
 
 
                 <Button Margin="0,40,0,0" x:Name="incodeBtn" Style="{StaticResource

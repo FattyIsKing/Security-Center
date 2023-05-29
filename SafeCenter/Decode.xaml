@@ -11,7 +11,8 @@
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown"
+        Icon="References/ikona.ico">
 
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25" materialDesign:ShadowAssist.ShadowDepth="Depth4">
 
